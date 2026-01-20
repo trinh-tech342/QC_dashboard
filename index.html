@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Nhập Liệu Sản Phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li class="active">Nhập Sản Phẩm</li>
+                <li>Lịch Sử Xuất</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Hệ Thống Kiểm Soát Chất Lượng</h1>
+            </header>
+
+            <section class="form-section">
+                <form id="productForm">
+                    <div class="grid-container">
+                        <div class="input-group">
+                            <label>Tên sản phẩm</label>
+                            <input type="text" id="productName" required placeholder="Nhập tên SP...">
+                        </div>
+                        <div class="input-group">
+                            <label>Khối lượng (kg/g)</label>
+                            <input type="text" id="weight" required placeholder="Ví dụ: 500g">
+                        </div>
+                        <div class="input-group">
+                            <label>Khách hàng</label>
+                            <input type="text" id="customer" required placeholder="Tên khách hàng">
+                        </div>
+                        <div class="input-group">
+                            <label>Số lô (Batch No.)</label>
+                            <input type="text" id="batchNo" required placeholder="VD: L02026">
+                        </div>
+                        <div class="input-group">
+                            <label>Ngày sản xuất</label>
+                            <input type="date" id="mfgDate" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Hạn sử dụng</label>
+                            <input type="date" id="expDate" required>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>Mã kiểm soát chất lượng (QC Code)</label>
+                            <input type="text" id="qcCode" required placeholder="Nhập mã QC...">
+                        </div>
+                    </div>
+                    <button type="submit" id="submitBtn">Lưu & Xuất Dữ Liệu</button>
+                </form>
+            </section>
+
+            <section class="table-section">
+                <h3>Dữ liệu đã nhập gần đây</h3>
+                <div class="table-wrapper">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Khối lượng</th>
+                                <th>Khách hàng</th>
+                                <th>Số lô</th>
+                                <th>Ngày SX</th>
+                                <th>HSD</th>
+                                <th>Mã QC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
