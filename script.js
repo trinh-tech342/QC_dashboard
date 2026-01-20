@@ -1,5 +1,5 @@
 // THAY ĐƯỜNG LINK WEB APP CỦA BẠN VÀO ĐÂY
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrBKSjcjD1CfQRXmo7MWvC4HwN3xjkEsLW6nuBEo8/dev';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfZZuCEdqfzZudnDas5djWH3ft6XG50n7qAdTn6-FBdMdYYdbNi8NMtK96i0NPejEQ/exec';
 
 const productForm = document.getElementById('productForm');
 const dataTable = document.querySelector('#dataTable tbody');
