@@ -56,3 +56,23 @@ function updateTable(data) {
     </tr>`;
     dataTable.insertAdjacentHTML('afterbegin', row);
 }
+let entryCount = 0;
+
+function updateTable(data) {
+    // Tăng số lượng thống kê
+    entryCount++;
+    document.getElementById('totalEntries').innerText = entryCount;
+    document.getElementById('lastBatch').innerText = data.batchNo;
+
+    const row = `
+        <tr style="animation: fadeIn 0.5s ease;">
+            <td><strong>${data.productName}</strong></td>
+            <td><span class="badge">${data.weight}</span></td>
+            <td>${data.customer}</td>
+            <td><code>${data.batchNo}</code></td>
+            <td>${data.mfgDate}</td>
+            <td>${data.expDate}</td>
+            <td style="color: var(--primary); font-weight: bold;">${data.qcCode}</td>
+        </tr>`;
+    dataTable.insertAdjacentHTML('afterbegin', row);
+}
