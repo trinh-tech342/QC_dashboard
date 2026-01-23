@@ -76,3 +76,31 @@ function updateTable(data) {
         </tr>`;
     dataTable.insertAdjacentHTML('afterbegin', row);
 }
+const mfgInput = document.getElementById('mfgDate');
+const shelfLifeInput = document.getElementById('shelfLife');
+const expInput = document.getElementById('expDate');
+
+function calculateEXP() {
+    if (!mfgInput.value) return;
+
+    let mfgDate = new Date(mfgInput.value);
+    let monthsToAdd = parseInt(shelfLifeInput.value);
+
+    // Cộng thêm số tháng
+    mfgDate.setMonth(mfgDate.getMonth() + monthsToAdd);
+
+    // Chuyển định dạng về YYYY-MM-DD để hiển thị lên input date
+    let expDateString = mfgDate.toISOString().split('T')[0];
+    expInput.value = expDateString;
+}
+
+// Lắng nghe sự kiện khi thay đổi ngày hoặc thời hạn
+mfgInput.addEventListener('change', calculateEXP);
+shelfLifeInput.addEventListener('change', calculateEXP);
+
+// Tự động điền ngày hôm nay vào Ngày sản xuất khi mở trang
+window.onload = () => {
+    const today = new Date().toISOString().split('T')[0];
+    mfgInput.value = today;
+    calculateEXP(); // Tính luôn HSD cho ngày hôm nay
+};
