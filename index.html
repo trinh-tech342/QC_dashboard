@@ -57,14 +57,25 @@
                             <label>Số lô (Batch No.)</label>
                             <input type="text" id="batchNo" required placeholder="VD: L02026">
                         </div>
-                        <div class="input-group">
-                            <label>Ngày sản xuất</label>
-                            <input type="date" id="mfgDate" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Hạn sử dụng</label>
-                            <input type="date" id="expDate" required>
-                        </div>
+                          <div class="input-group">
+                              <label>Ngày sản xuất</label>
+                              <input type="date" id="mfgDate" required>
+                          </div>
+
+                          <div class="input-group">
+                              <label>Thời hạn (Tháng)</label>
+                              <select id="shelfLife" class="custom-select">
+                                  <option value="6">6 tháng</option>
+                                  <option value="12" selected>12 tháng (1 năm)</option>
+                                  <option value="24">24 tháng (2 năm)</option>
+                                  <option value="36">36 tháng (3 năm)</option>
+                              </select>
+                          </div>
+
+                          <div class="input-group">
+                              <label>Hạn sử dụng (Tự động)</label>
+                              <input type="date" id="expDate" required readonly style="background: #f1f5f9; cursor: not-allowed;">
+                          </div>
                         <div class="input-group full-width">
                             <label>Mã kiểm soát chất lượng (QC Code)</label>
                             <input type="text" id="qcCode" required placeholder="Nhập mã QC...">
