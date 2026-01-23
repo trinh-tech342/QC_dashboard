@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Nhập Liệu Sản Phẩm</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -108,5 +110,20 @@
         </main>
     </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <div class="input-group full-width">
+        <label>Mã kiểm soát chất lượng (QC Code)</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="qcCode" required placeholder="Nhập hoặc quét mã...">
+            <button type="button" id="scanBtn" style="width: auto; margin-top: 0; background: #64748b;">
+                📷 Quét Mã
+            </button>
+        </div>
+    </div>
+
+<div id="reader-container" style="display: none; margin-top: 20px;">
+    <div id="reader" style="width: 100%; max-width: 500px; margin: 0 auto; border-radius: 12px; overflow: hidden;"></div>
+    <button type="button" id="stopScanBtn" style="background: #ef4444; margin-top: 10px;">Dừng Quét</button>
+</div>
 </body>
 </html>
