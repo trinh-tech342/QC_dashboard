@@ -151,3 +151,18 @@ th { background: #f1f5f9; font-size: 0.85rem; }
 }
 
 tr:hover { background-color: #f1f5f9; }
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Hiệu ứng focus cho input readonly */
+input[readonly] {
+    border: 1px dashed #cbd5e1;
+    color: #64748b;
+}
