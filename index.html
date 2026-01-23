@@ -11,9 +11,26 @@
         <aside class="sidebar">
             <h2>Dashboard</h2>
             <ul>
-                <li class="active">Nhập Sản Phẩm</li>
-                <li>Lịch Sử Xuất</li>
-            </ul>
+    <li class="active"><i class="icon">📝</i> Nhập Sản Phẩm</li>
+    <li onclick="window.open('https://docs.google.com/spreadsheets/d/1jm13lCYMyf6-lBOLlZWSwmvjSLd0eWJpPlEA12rc5Vs/edit?gid=0#gid=0', '_blank')" class="btn-sheet">
+        <i class="icon">📊</i> Xem Lịch Sử (Sheets)
+    </li>
+</ul>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Tổng đơn đã nhập</span>
+        <span class="stat-value" id="totalEntries">0</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Lô hàng mới nhất</span>
+        <span class="stat-value" id="lastBatch">---</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Trạng thái hệ thống</span>
+        <span class="stat-value status-online">Sẵn sàng</span>
+    </div>
+</div>
         </aside>
 
         <main class="content">
