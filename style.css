@@ -86,3 +86,68 @@ button:hover { background: #1d4ed8; }
 table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 th, td { text-align: left; padding: 12px; border-bottom: 1px solid #e2e8f0; }
 th { background: #f1f5f9; font-size: 0.85rem; }
+/* Thêm vào style.css */
+
+/* Hiệu ứng Sidebar */
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar li:hover {
+    background: #334155;
+    border-left: 4px solid var(--primary);
+}
+
+.btn-sheet {
+    margin-top: 10px;
+    color: #10b981 !important; /* Màu xanh lá đặc trưng của Excel/Sheet */
+    font-weight: bold;
+}
+
+/* Thống kê Dashboard */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+}
+
+.stat-label {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.status-online { color: #10b981; font-size: 1.1rem; }
+
+/* Làm đẹp bảng */
+#dataTable thead th {
+    background: #f8fafc;
+    color: #475569;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+tr:hover { background-color: #f1f5f9; }
