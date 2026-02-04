@@ -69,7 +69,7 @@
                           <label for="mfgDate">Ngày sản xuất</label>
                           <input type="date" id="mfgDate" required>
                       </div>
-                      
+
                       <div class="input-group">
                           <label for="shelfLife">Thời hạn (Tháng)</label>
                           <select id="shelfLife" class="custom-select">
@@ -95,7 +95,15 @@
                       <button type="button" id="stopScanBtn" style="background: var(--danger);">Dừng Quét</button>
                   </div>
 
-                  <button type="submit" id="submitBtn">Lưu & Xuất Dữ Liệu</button>
+                  <div class="button-group" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <button type="submit" id="submitBtn" style="flex: 2;">
+                        💾 Lưu vào Hệ Thống
+                    </button>
+                    
+                    <button type="button" id="downloadPdfBtn" style="flex: 1; background: #64748b; display: none;">
+                        📄 Xuất PDF
+                    </button>
+                  </div>
               </form>
             </section>
 
