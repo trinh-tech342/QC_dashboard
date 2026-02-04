@@ -129,10 +129,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 /* Responsive cho mobile */
+/* Sửa lỗi hiển thị trên điện thoại */
 @media (max-width: 768px) {
-    .grid-container { grid-template-columns: 1fr; }
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: relative; }
+    .container { 
+        flex-direction: column !important; /* Ép Dashboard và Content xếp chồng dọc */
+    }
+
+    .sidebar { 
+        width: 100% !important; /* Dashboard rộng hết màn hình */
+        height: auto !important; /* Chiều cao tự động theo nội dung */
+        position: relative !important; 
+        padding: 15px !important;
+    }
+
+    .content { 
+        padding: 15px !important; /* Giảm lề để form rộng hơn */
+    }
+
+    .stats-grid { 
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Chia các thẻ thống kê thành 2 cột */
+        gap: 10px !important;
+    }
+
+    .grid-container { 
+        grid-template-columns: 1fr !important; /* Form nhập liệu chỉ còn 1 cột cho dễ bấm */
+    }
 }
 
 .input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.85rem; color: #475569; }
