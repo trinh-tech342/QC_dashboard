@@ -9,13 +9,61 @@ let entryCount = 0;
 const mfgInput = document.getElementById('mfgDate');
 const shelfLifeInput = document.getElementById('shelfLife');
 const expInput = document.getElementById('expDate');
+const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+let currentData = null; // Lưu dữ liệu tạm để xuất PDF sau
 
 productForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     const submitBtn = document.getElementById('submitBtn');
-    submitBtn.innerText = 'Đang gửi...';
+    submitBtn.innerText = 'Đang lưu...';
     submitBtn.disabled = true;
+
+    // Lấy dữ liệu
+    currentData = {
+        productName: document.getElementById('productName').value,
+        quantity: document.getElementById('quantity').value,
+        weight: document.getElementById('weight').value,
+        customer: document.getElementById('customer').value,
+        batchNo: document.getElementById('batchNo').value,
+        mfgDate: document.getElementById('mfgDate').value,
+        expDate: document.getElementById('expDate').value,
+        qcCode: document.getElementById('qcCode').value
+    };
+
+    // 1. Gửi dữ liệu tới Google Sheets
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(currentData)
+    })
+    .then(() => {
+        // 2. Chỉ hiển thị bảng và nút PDF khi lưu thành công
+        updateTable(currentData);
+        alert('Đã lưu dữ liệu thành công!');
+        
+        // Hiện nút PDF để người dùng chủ động nhấn nếu muốn
+        downloadPdfBtn.style.display = 'block'; 
+        
+        submitBtn.innerText = '💾 Lưu Tiếp';
+        submitBtn.disabled = false;
+    })
+    .catch(error => {
+        alert('Lỗi lưu dữ liệu!');
+        submitBtn.disabled = false;
+    });
+});
+
+// Sự kiện nhấn nút Xuất PDF riêng
+downloadPdfBtn.addEventListener('click', () => {
+    if (currentData) {
+        generatePDF(currentData);
+        downloadPdfBtn.style.display = 'none'; // Tải xong thì ẩn đi
+        productForm.reset(); // Reset form sau khi đã hoàn tất mọi việc
+    }
+});
 
     // Lấy dữ liệu từ các ô input
     const formData = {
