@@ -13,26 +13,26 @@
         <aside class="sidebar">
             <h2>Dashboard</h2>
             <ul>
-    <li class="active"><i class="icon">📝</i> Nhập Sản Phẩm</li>
-    <li onclick="window.open('https://docs.google.com/spreadsheets/d/1jm13lCYMyf6-lBOLlZWSwmvjSLd0eWJpPlEA12rc5Vs/edit?gid=0#gid=0', '_blank')" class="btn-sheet">
-        <i class="icon">📊</i> Xem Lịch Sử (Sheets)
-    </li>
-</ul>
+                <li class="active"><i class="icon">📝</i> Nhập Sản Phẩm</li>
+                <li onclick="window.open('https://docs.google.com/spreadsheets/d/1jm13lCYMyf6-lBOLlZWSwmvjSLd0eWJpPlEA12rc5Vs/edit?gid=0#gid=0', '_blank')" class="btn-sheet">
+                    <i class="icon">📊</i> Xem Lịch Sử (Sheets)
+                </li>
+            </ul>
 
-<div class="stats-grid">
-    <div class="stat-card">
-        <span class="stat-label">Tổng đơn đã nhập</span>
-        <span class="stat-value" id="totalEntries">0</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-label">Lô hàng mới nhất</span>
-        <span class="stat-value" id="lastBatch">---</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-label">Trạng thái hệ thống</span>
-        <span class="stat-value status-online">Sẵn sàng</span>
-    </div>
-</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Tổng đơn đã nhập</span>
+                    <span class="stat-value" id="totalEntries">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Lô hàng mới nhất</span>
+                    <span class="stat-value" id="lastBatch">---</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Trạng thái hệ thống</span>
+                    <span class="stat-value status-online">Sẵn sàng</span>
+                </div>
+            </div>
         </aside>
 
         <main class="content">
@@ -41,50 +41,62 @@
             </header>
 
             <section class="form-section">
-                <form id="productForm">
-                    <div class="grid-container">
-                        <div class="input-group">
-                            <label>Tên sản phẩm</label>
-                            <input type="text" id="productName" required placeholder="Nhập tên SP...">
-                        </div>
-                        <div class="input-group">
-                            <label>Khối lượng (kg/g)</label>
-                            <input type="text" id="weight" required placeholder="Ví dụ: 500g">
-                        </div>
-                        <div class="input-group">
-                            <label>Khách hàng</label>
-                            <input type="text" id="customer" required placeholder="Tên khách hàng">
-                        </div>
-                        <div class="input-group">
-                            <label>Số lô (Batch No.)</label>
-                            <input type="text" id="batchNo" required placeholder="VD: L02026">
-                        </div>
-                          <div class="input-group">
-                              <label>Ngày sản xuất</label>
-                              <input type="date" id="mfgDate" required>
-                          </div>
+              <form id="productForm">
+                  <div class="grid-container">
+                      <div class="input-group">
+                          <label for="productName">Tên sản phẩm</label>
+                          <input type="text" id="productName" required placeholder="Nhập tên SP...">
+                      </div>
+                      <div class="input-group">
+                          <label for="weight">Khối lượng (kg/g)</label>
+                          <input type="text" id="weight" required placeholder="Ví dụ: 500g">
+                      </div>
 
-                          <div class="input-group">
-                              <label>Thời hạn (Tháng)</label>
-                              <select id="shelfLife" class="custom-select">
-                                  <option value="6">6 tháng</option>
-                                  <option value="12" selected>12 tháng (1 năm)</option>
-                                  <option value="24">24 tháng (2 năm)</option>
-                                  <option value="36">36 tháng (3 năm)</option>
-                              </select>
-                          </div>
+                      <div class="input-group">
+                          <label for="quantity">Số lượng (thùng/cái)</label>
+                          <input type="text" id="quantity" required placeholder="Ví dụ: 50 thùng">
+                      </div>
+                      <div class="input-group">
+                          <label for="customer">Khách hàng</label>
+                          <input type="text" id="customer" required placeholder="Tên khách hàng">
+                      </div>
 
-                          <div class="input-group">
-                              <label>Hạn sử dụng (Tự động)</label>
-                              <input type="date" id="expDate" required readonly style="background: #f1f5f9; cursor: not-allowed;">
+                      <div class="input-group">
+                          <label for="batchNo">Số lô (Batch No.)</label>
+                          <input type="text" id="batchNo" required placeholder="VD: L02026">
+                      </div>
+                      <div class="input-group">
+                          <label for="mfgDate">Ngày sản xuất</label>
+                          <input type="date" id="mfgDate" required>
+                      </div>
+                      
+                      <div class="input-group">
+                          <label for="shelfLife">Thời hạn (Tháng)</label>
+                          <select id="shelfLife" class="custom-select">
+                              <option value="6">6 tháng</option>
+                              <option value="12" selected>12 tháng</option>
+                              <option value="24">24 tháng</option>
+                          </select>
+                      </div>
+                      <div class="input-group">
+                          <label>Hạn sử dụng (Tự động)</label>
+                          <input type="date" id="expDate" readonly>
+                      </div>
+
+                      <div class="input-group full-width">
+                          <label for="qcCode">Mã kiểm soát (QC Code)</label>
+                          <div style="display: flex; gap: 10px;">
+                              <input type="text" id="qcCode" required placeholder="Quét hoặc nhập mã...">
+                              <button type="button" id="scanBtn" style="width: auto; margin: 0; padding: 0 20px;">📷 Quét</button>
                           </div>
-                        <div class="input-group full-width">
-                            <label>Mã kiểm soát chất lượng (QC Code)</label>
-                            <input type="text" id="qcCode" required placeholder="Nhập mã QC...">
-                        </div>
-                    </div>
-                    <button type="submit" id="submitBtn">Lưu & Xuất Dữ Liệu</button>
-                </form>
+                      </div>
+                  </div> <div id="reader-container" style="display: none; margin-top: 20px;">
+                      <div id="reader" style="width: 100%; border-radius: 12px; overflow: hidden;"></div>
+                      <button type="button" id="stopScanBtn" style="background: var(--danger);">Dừng Quét</button>
+                  </div>
+
+                  <button type="submit" id="submitBtn">Lưu & Xuất Dữ Liệu</button>
+              </form>
             </section>
 
             <section class="table-section">
@@ -95,6 +107,7 @@
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th>Khối lượng</th>
+                                <th>Số lượng</th>
                                 <th>Khách hàng</th>
                                 <th>Số lô</th>
                                 <th>Ngày SX</th>
@@ -102,28 +115,14 @@
                                 <th>Mã QC</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </section>
         </main>
     </div>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <div class="input-group full-width">
-        <label>Mã kiểm soát chất lượng (QC Code)</label>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" id="qcCode" required placeholder="Nhập hoặc quét mã...">
-            <button type="button" id="scanBtn" style="width: auto; margin-top: 0; background: #64748b;">
-                📷 Quét Mã
-            </button>
-        </div>
-    </div>
 
-<div id="reader-container" style="display: none; margin-top: 20px;">
-    <div id="reader" style="width: 100%; max-width: 500px; margin: 0 auto; border-radius: 12px; overflow: hidden;"></div>
-    <button type="button" id="stopScanBtn" style="background: #ef4444; margin-top: 10px;">Dừng Quét</button>
-</div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="script.js"></script>
 </body>
 </html>
